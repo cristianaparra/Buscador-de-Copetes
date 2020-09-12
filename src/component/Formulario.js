@@ -1,12 +1,12 @@
-import React,{useContext} from 'react';
-import {CategoriasContext} from '../context/CategoriasContext'
+import React, { useContext } from 'react';
+import { CategoriasContext } from '../context/CategoriasContext'
 const Formulario = () => {
 
-const { categorias } = useContext(CategoriasContext)
-console.log(categorias)
+    const { categorias } = useContext(CategoriasContext)
+    console.log(categorias)
     return (
         <form
-        className='col-12'
+            className='col-12'
         >
             <fieldset className='text-center'>
                 <legend>Buscar Coctel por Categoria o Ingredientre</legend>
@@ -26,10 +26,16 @@ console.log(categorias)
                         name='categoria'
                     >
                         <option value=''>--Selecciona Categoria</option>
+                        {categorias.map(categoria =>(
+                            <option 
+                            key={categoria.strCategory}
+                            value={categoria.strCategory}
+                            >{categoria.strCategory}</option>
+                        ))}
                     </select>
                 </div>
                 <div className='col-md-4'>
-                <input
+                    <input
                         name='submit'
                         className='btn btn-block btn-primary'
                         value='Buscar Recetas'
