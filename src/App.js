@@ -1,17 +1,18 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Header from './component/Header'
 import Formulario from './component/Formulario'
+import CategoriasProvider from './context/CategoriasContext'
 
 function App() {
   return (
-    <Fragment>
+    <CategoriasProvider>
       <Header />
       <div className="container mt-5">
         <div className="row">
-<Formulario />
+          <Formulario />
         </div>
       </div>
-    </Fragment>
+    </CategoriasProvider>
   );
 }
 
