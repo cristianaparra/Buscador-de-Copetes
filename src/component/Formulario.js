@@ -2,7 +2,8 @@ import React,{useContext} from 'react';
 import {CategoriasContext} from '../context/CategoriasContext'
 const Formulario = () => {
 
-const { hola } = useContext(CategoriasContext)
+const { categorias } = useContext(CategoriasContext)
+console.log(categorias)
     return (
         <form
         className='col-12'
